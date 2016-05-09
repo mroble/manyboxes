@@ -21,13 +21,15 @@ function init() {
 
 
 	var cubeShape = new THREE.BoxGeometry(3, 3, 3);
+
+
 	var cubeMaterial = new THREE.MeshBasicMaterial();
 	//var cubeMaterial = new THREE.MeshBasicMaterial({color: 0x66FFFF});
 
-	//var cubeMaterial = new THREE.MeshBasicMaterial ({ vertexColors: THREE.FaceColors, overdraw: 0.5 });
+	//var cubeMaterial = new THREE.MeshBasicMaterial ( { vertexColors: THREE.FaceColors, overdraw: 0.5 } );
 
 	for ( var i = 0; i < cubeShape.faces.length; i += 2 ) {
-		var hex = Math.random() = 0xffffff;
+		var hex = Math.random() * 0xffffff;
 		cubeShape.faces[i].color.setHex(hex);
 		cubeShape[i + 1].color.setHex(hex);
 	}
@@ -38,7 +40,7 @@ function init() {
 	//scene.add( cube );
 
 	for(var x = 0; x < 50; x++) {
-		cube = new THREE.Mesh(cubeShape, cubeMaterial);
+		cube = new THREE.Mesh( cubeShape, cubeMaterial );
 
 		cube.position.x = Math.random() * 75 - 50;
 		cube.position.y = Math.random() * 75 - 50;
@@ -105,7 +107,6 @@ function animate() {
 
 	}
 
-
 	renderer.render(scene, camera);
-
 }
+
